@@ -1,0 +1,18 @@
+$mainColor:rgb(255, 255, 255);
+$padding: 10px 30px;
+.w-75{
+    margin-top: 35px !important;
+   
+}
+  
+.btn-info{
+    color:$mainColor;
+    border-radius: 15px;
+    padding: $padding;
+}
+.btn-warning{
+     padding:$padding;
+     background-color: #D9D9D9;
+     border-radius: 20px;
+     border: #D9D9D9 solid;
+}

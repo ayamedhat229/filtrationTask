@@ -1,0 +1,26 @@
+<div class="userList w-75 m-auto  p-5  bg-body-tertiary rounded-5 my-5 ">
+ <div class="searchInput" >
+    <input [(ngModel)]="term" type="text" class="form-control" placeholder="Search by Name">
+ </div>
+    <button type="submit" class="btn btn-info me-auto mt-1 mb-2 text-white"(click)="addContact()"><i class="fa-solid fa-plus p-2  text-white"></i>Add New contact</button>
+    <div class="clear-fix"></div>
+    <div class="row mt-5" *ngFor="let users of data|search:term">
+      <div class="col-md-3 mt-4" >
+        <img src=".\assets\images\Ellipse 1.png" class=" d-flex"> 
+      
+      </div>   
+       <div class="col-md-7 mt-5">
+        <h3 class="text-white">{{users.firstName}}{{users.lastName}}</h3>
+         <p class="text-white">{{users.id}}</p>
+         <hr class="border-2">
+       </div>
+       <div class="col-md-2 mt-5">
+        <button class="btn btn-white bg-white shadow " >
+          <a [routerLink]="['/update',users.id]">
+          <i class="fa-solid fa-pen-to-square text-info"></i></a></button>
+         <button class="btn btn-white bg-white ms-2 shadow" (click)="deleteUser(users.id)">
+       <i class="fa-solid fa-trash-can text-danger"></i></button>
+        
+       </div>
+    </div>
+</div>

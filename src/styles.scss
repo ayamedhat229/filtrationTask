@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+$bgColor:#c524d4cd;
+$fontFamily:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$mainColor:white;
+$lightBgColor:rgba(30,41,82,0.2);
+$bgTransparent:rgba(19,91,117,0.6);
+$FontSiza:20px;
+$brdrColor:rgba(255, 255, 255, 0.413);
+$brdrWidth:1px;
+$brdrSolid:solid;
+body{
+    background-image: url(assets/images/backgroundPic.jpg);
+    background-size: cover;
+    font-family:'Montserrat';
+    background-position: center center;
+    color: $mainColor;
+}
+

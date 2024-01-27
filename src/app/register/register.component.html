@@ -1,0 +1,39 @@
+<div class=" w-75 m-auto py-4 shadow p-3 mb-5 bg-body-tertiary rounded-5">
+    <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+        <img class="w-25 m-auto d-flex justify-content-center img-fluid rounded-circle custom-circle m-5 p-3" [src]="urlLink">
+        <input type="file" class="btn btn-transparent" formControlName="picture" (change)="selectFiles($event)">
+        <div class="input-data">
+            <input type="text" formControlName="firstName" class="form-control my-2" placeholder="FirstName">
+            <div *ngIf="registerForm.controls['firstName'].errors&&registerForm.controls['firstName'].touched" class="text-danger">
+                <p *ngIf="registerForm.controls['firstName'].errors['required']">First name is required</p>
+                <p *ngIf="registerForm.controls['firstName'].errors['minlength']">First name minlength should be 2</p>
+                <p *ngIf="registerForm.controls['firstName'].errors['maxlength']">First name maxlength should be 10</p>
+            </div>
+        </div>
+        <div class="input-data col">
+            <input type="text" formControlName="lastName" class="form-control my-2" placeholder="LastName">
+            <div *ngIf="registerForm.controls['lastName'].errors&&registerForm.controls['lastName'].touched" class="text-danger">
+                <p *ngIf="registerForm.controls['lastName'].errors['required']">last name is required</p>
+                <p *ngIf="registerForm.controls['lastName'].errors['minlength']">last name minlength should be 2</p>
+                <p *ngIf="registerForm.controls['lastName'].errors['maxlength']">last name maxlength should be 10</p>
+            </div>
+        </div>
+       <div class="input-data col">
+            <input type="text" class="form-control my-2" formControlName="phoneNumber" placeholder="Phone Number">
+       </div>
+        <div class="input-data col">
+            <input type="email" formControlName="email" class="form-control my-2" placeholder="Email">
+            <div *ngIf="registerForm.controls['email'].errors&&registerForm.controls['email'].touched" class="text-danger">
+                <p *ngIf="registerForm.controls['email'].errors['required']">email is required</p>
+                <p *ngIf="registerForm.controls['email'].errors['email']">email should be valid mail</p>
+            </div>
+        </div>
+        <button type="reset" class="btn btn-warning">Cancel</button>
+        <button [disabled]="registerForm.invalid" type="submit" class="btn btn-info float-end my-1">Save</button>
+        <div class="clear-fix"></div>
+    </form>
+</div>
+
+
+
+  
